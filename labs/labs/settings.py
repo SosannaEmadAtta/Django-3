@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-+0gn=fsg6g7+yry3awynwbk^yc_h05-cukkr=&^i=z--1ob11z"
+SECRET_KEY = "django-insecure-r%xryrc0fyzeu&ko5aq+o_%#9_9kz_52-ns40o4=@t)aj1-!v%"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,11 +38,22 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    #
+    # apps
     "account.apps.AccountConfig",
     "track.apps.TrackConfig",
     "trainee.apps.TraineeConfig",
+    # crispy_forms
+    "crispy_forms",
+    "crispy_bootstrap5",
+    # scss
 ]
+
+
+# bootstrap
+# CRISPY_TEMPLATE_PACK = "bootstrap4"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -81,11 +93,11 @@ DATABASES = {
     "default": {
         # "ENGINE": "django.db.backends.sqlite3",
         # "NAME": BASE_DIR / "db.sqlite3",
-        #
+        # my database
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "django_labs",
+        "NAME": "django_lab3",
         "USER": "sosanna",
-        "PASSWORD": "sosana13",
+        "PASSWORD": "sosanna13",
         "HOST": "localhost",
     }
 }
@@ -128,6 +140,9 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATICFILES_DIRS = ["static/"]
 
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
