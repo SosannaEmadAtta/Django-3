@@ -24,6 +24,8 @@ from account_app.views import *
 urlpatterns = ([
     path('admin/', admin.site.urls),
     path('accounts/',include('account_app.urls')),
+    # path('trainee/' , include('trainee_app.urls')),
+    # path('tracks/' , include('track_app.urls')),
     path('libraries/', include('libraries.urls')),
     path('Register/', register,name='register'),
     path('', login,name='login'),

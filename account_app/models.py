@@ -1,4 +1,4 @@
-from enum import nonmember
+# from enum import nonmember
 # from django.contrib.auth.hashers import make_password
 from django.db import models
 

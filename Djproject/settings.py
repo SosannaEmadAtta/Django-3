@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'trainee_app',
     'track_app',
     'libraries',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
